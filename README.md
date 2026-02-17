@@ -24,7 +24,7 @@ Brevity is a Chrome Extension that generates witty, brutally honest AI-powered s
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/Brevity.git
+git clone https://github.com/swapmali/Brevity.git
 ```
 
 ### 2. Load the Unpacked Extension in Chrome
