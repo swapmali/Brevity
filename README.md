@@ -2,14 +2,14 @@
 
 **Instant summaries. Zero fluff. Actually funny.**
 
-Brevity is a Chrome Extension that generates witty, brutally honest AI-powered summaries of movie and TV show descriptions. Hover over any description on Netflix, YouTube, or IMDb and get a sharp, funny 1–2 sentence summary that cuts straight through the marketing fluff — like your most sarcastic friend explaining the plot.
+Brevity is a Chrome Extension that generates witty, brutally honest AI-powered summaries of movie and TV show descriptions. Hover over any description on Netflix, YouTube, IMDb, or Prime Video and get a sharp, funny 1–2 sentence summary that cuts straight through the marketing fluff — like your most sarcastic friend explaining the plot.
 
 ---
 
 ## Features
 
 - **Hover to Summarize** — hover over any description to get a funny, no-BS summary that actually tells you what the show is about
-- **Multi-Site Support** — works on Netflix, YouTube, and IMDb out of the box
+- **Multi-Site Support** — works on Netflix, YouTube, IMDb, and Prime Video out of the box
 - **Smart Caching** — summaries are cached locally for 30 days so repeat visits are instant
 - **Zero Duplicate Calls** — deduplicates concurrent API requests automatically
 - **Non-Blocking** — never freezes the UI; all API calls run in the background service worker
@@ -69,7 +69,7 @@ The popup also shows how many summaries are cached and lets you clear the cache.
 
 ## How It Works
 
-1. **Content script** runs on Netflix, YouTube, and IMDb
+1. **Content script** runs on Netflix, YouTube, IMDb, and Prime Video
 2. It scans the page for description elements using site-specific CSS selectors
 3. A **MutationObserver** watches for dynamically loaded content (SPA navigation, lazy loading)
 4. When you **hover** over a description, the text is extracted and a request is sent to the **background service worker**
@@ -162,6 +162,7 @@ brevity/
 | Netflix | Synopsis elements in preview modals, title info, episode synopses |
 | YouTube | Video description text, attributed snippets |
 | IMDb | Plot summaries, storyline sections |
+| Prime Video | Synopsis elements on detail pages (primevideo.com and amazon.com) |
 
 The selector architecture in `constants.js` makes it straightforward to add new sites — just add a new entry to `SUPPORTED_SITES` with the hostname and an array of CSS selectors.
 
